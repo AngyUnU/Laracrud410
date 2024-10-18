@@ -15,36 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () { // " /  = slash " welcome.blade.php sitema de plantillas que ofrece laraavael para ahorrar timpo   
-    return view('welcome');
-});
+    return view('index');
+})->name ('index');
 
-Route::get('/testView', function () {
-    return view('testView');
-});
+Route::get('/products', function () {
+    return view('products_index');
+}) ->name('products');
 
-Route::get('/texto', function () {
-    echo "hi word!";
-    echo '<h1>Hola mundo</h1>';
-});
+Route::get('/clients', function () {
+    return view('clients_index');
+}) ->name('clients');
 
-Route::get('/echo', function (){
-    echo view('test2');
-});
-
-Route::get('/Masrutas', function ($id) {
-    return "podemos tener rutas tipo GET, POST, Delete, Patch";
-});
-
-
-
-Route::get('/custom', function () {
-$msj = "Mensaje del servidor ";
-$id = "500";
-return view ('custom', ['msj'=> $msj, "identi" => $id, "A" => 29]);
-});
-
-Route::get('/contact', function (){
-    return view ('contacto');
-})-> name('contact');
-
-Route::get('/testdb',[TestController::class, 'test']); // rutra para obtener el control
+Route::get('/sales', function () {
+    return view('sales_index');
+}) ->name('sales');
