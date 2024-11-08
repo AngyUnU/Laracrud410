@@ -8,7 +8,7 @@
     
    
     nav p a{
-        color:lemonchiffon;
+        color:rgb(41, 17, 46);
         text-decoration:none;
         padding-block:10px;
         padding-inline: 10px;
@@ -22,7 +22,7 @@
     }
 
     nav p a:hover{
-        background:rgb(251, 109, 251):
+        background:rgb(180, 100, 255):
         padding-block:20px;
         padding-inline:10px;
     }
@@ -32,7 +32,7 @@
     <nav>
         <p> 
         <a href="{{route('index')}}">Inicio</a>
-        <a href="{{route('products')}}">Productos</a>
+        <a href="{{route('products.index')}}">Productos</a>
         <a href="{{route('clients')}}">Clientes</a>
         <a href="{{route('sales')}}">Ventas</a>
         </p>

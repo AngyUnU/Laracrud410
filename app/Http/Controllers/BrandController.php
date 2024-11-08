@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,6 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('products_index');
     }
 
     /**
@@ -23,9 +21,6 @@ class ProductController extends Controller
     public function create()
     {
         //
-        //echo "create productos";
-        $brands=Brand::pluck('id','brand');
-        return view('products_create', compact('brand'));
     }
 
     /**
@@ -34,45 +29,37 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
-        echo "store products";
-        //dd($request);
-        dd($request->all());
-        Product::create($request->all());
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Brand $brand)
     {
         //
-        echo "Show productos";
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Brand $brand)
     {
         //
-        echo "Edit Productos";
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Brand $brand)
     {
         //
-        "Update Productos";
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(Brand $brand)
     {
         //
-        echo "Destroy productos";
     }
 }

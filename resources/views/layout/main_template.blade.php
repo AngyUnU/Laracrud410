@@ -9,7 +9,7 @@
 </head>
 <body style="background-color: rgb(104, 62, 190) ">
 
-@include('fragmments.navbar')
+@include('fragments.navbar')
 @yield('content')
 
 </body>

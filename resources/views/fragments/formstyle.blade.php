@@ -4,10 +4,15 @@ box-sizing:border-box;
     }
 form{
 width: 300px;
+height: 400;
 padding-inline: 20px;
 border-radius:12px;
 margin-block:auto;
-background-color: #5a2da4;
+margin-inline: auto;
+background-color: #907dae;
+}
+*titulo{
+    text-align: center;
 }
 form label {
     width:140px;
@@ -27,8 +32,10 @@ form input[type:"text"],
 form input[type:number]{
     width:200px;
     padding-block:3px;
+    border:1px solid #ffffff;
     border-radius:3px;
-    background-color:#ffffff;
+    color:#fff;
+    background-color:#2d0355;
     margin-block:4px;
     display:flex;
 }
