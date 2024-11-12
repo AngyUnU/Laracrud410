@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Brand;
 use Illuminate\Http\Request;
 
@@ -20,7 +19,9 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+    
+        return view('brand_create');
+
     }
 
     /**
@@ -28,7 +29,8 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Brand::create($request->all());
+        return to_route('products.index')-> with ('status', 'Marca registrada');
     }
 
     /**
