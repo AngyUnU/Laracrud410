@@ -3,13 +3,13 @@
 box-sizing:border-box;
     }
 form{
-width: 300px;
-height: 400;
-padding-inline: 20px;
+width: 500px;
+height: 300px;
+padding-inline: 24px;
 border-radius:12px;
 margin-block:auto;
 margin-inline: auto;
-background-color: #907dae;
+background-color: #d0b2ff;
 }
 *titulo{
     text-align: center;
@@ -43,7 +43,7 @@ form button[type:"submit"]{
     width:100px;
     padding:8px 17px;
     margin-block-start:32px;
-    border:1px solid #000;
+    border:1px solid #00000;
     border-radius:5px;
     display:block;
     color:#ffffff;

@@ -7,8 +7,8 @@
     @csrf
     <br>
     <label for="" class="">Nombre del producto</label>
-    <input type="text" name = 'nameProduct'>
-
+    <input type="text" name = 'nameproduct'>
+<br>
     <label for="" class="">Marca</label>
     <select name="brand_id" id="">
         <option value="">Selecciona...</option>
@@ -20,13 +20,13 @@
 <br>
     <label for="">Cantidad</label>
     <input type="text" name="stock">
-
+<br>
     <label for="">Precio Unitario</label>
     <input type="text" name = "unit_price">
-
+<br>
     <label for="">Imagen</label>
-    <input type="text" name="imagen">
-    
-    <button type="submit">Registrar</button>
+    <input type="file" name="imagen">
+    <br>
+    <button type="submit"> Registrar</button>
 </form>
 @endsection
