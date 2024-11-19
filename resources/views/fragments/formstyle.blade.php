@@ -39,14 +39,26 @@ form input[type:number]{
     margin-block:4px;
     display:flex;
 }
-form button[type:"submit"]{
+form button{
     width:100px;
     padding:8px 17px;
     margin-block-start:32px;
-    border:1px solid #00000;
+    border:1px solid #000;
     border-radius:5px;
     display:block;
     color:#ffffff;
     background-color:#000;
 }
+
+form a{
+    text-decoration: none;
+}
+form h3{
+    width: 100%;
+    height: 10px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+}
+
 </style>

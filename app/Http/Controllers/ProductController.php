@@ -14,7 +14,7 @@ class ProductController extends Controller
     {
         //
         $products = Product::get();
-        return view('products_index', compact('products'));
+        return view('products.index', compact('products'));
     }
 
    
@@ -23,7 +23,7 @@ class ProductController extends Controller
         //
         //echo "create productos";
         $brands=Brand::pluck('id','brand');
-        return view('products_create', compact('brands'));
+        return view('Admin/products/create', compact('brands'));
     }
 
     public function store(Request $request)
@@ -41,14 +41,14 @@ class ProductController extends Controller
     {
         //
      //   echo "Show productos";
-        return view('products_show', compact('product'));
+        return view('Admin/products/show', compact('product'));
     }
 
    
     public function edit(Product $product)
     {
         $brands =Brand::pluck('id','brand');
-        echo view('products_edit', compact('brands','product'));
+        echo view('Admin/products/edit', compact('brands','product'));
        
     }
 
@@ -59,10 +59,15 @@ class ProductController extends Controller
         return to_route('products.index')-> with ('status', 'producto Actualizado');
     }
 
-   
+   public function delete(Product $product)
+   {
+    echo view('Admin/products/delete', compact('product'));
+   }
+
     public function destroy(Product $product)
     {
-        //
-        echo "Destroy productos";
+ 
+        $product->delete();
+        return to_route('products.index')-> with('status', 'Producto Eliminado');
     }
 }
