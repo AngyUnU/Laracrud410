@@ -8,10 +8,10 @@ form button{
     padding:8px 17px;
     margin-block-start:32px;
     border:1px solid #000;
-    border-radius:5px;
+    border-radius:15px;
     display:block;
     color:#ffffff;
-    background-color:#000;
+    background-color:#581c60;
 }
 
 form a{
@@ -43,7 +43,7 @@ form h3{
            @method("DELETE")
            @csrf
             <button type="submit">
-                    si
+                 SI
             </button>
         </form>
     </td>

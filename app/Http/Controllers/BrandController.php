@@ -21,7 +21,7 @@ class BrandController extends Controller
     public function create()
     {
     
-        return view('Admin/brand/create');
+        return view('brand.create');
 
     }
 

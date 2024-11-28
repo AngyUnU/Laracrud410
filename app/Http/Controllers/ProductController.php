@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Brand;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\products\StoreRequest;
 
 class ProductController extends Controller
 {
@@ -13,7 +14,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products = Product::get();
+      //  $products = Product::get();
+      $products = Product::paginate(5);
         return view('products.index', compact('products'));
     }
 
@@ -22,17 +24,24 @@ class ProductController extends Controller
     {
         //
         //echo "create productos";
+        
         $brands=Brand::pluck('id','brand');
-        return view('Admin/products/create', compact('brands'));
+        return view('products.create', compact('brands'));
+        
     }
 
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
-       //  echo "Registro Realizado";
-        //dd($request);
-        //dd($request->all());
-        Product::create($request->all());
+  
+        $data = $request->all();
+
+        if(isset($data["imagen"])){
+        // cambiar el nombre del archivo a cargar
+            $data["imagen"] = $filename = time(). ".".$data["imagen"]->extension();
+         // cambiar la carpeta publica 
+         $request->imagen->move(public_path("imagen/products"), $filename);
+        }
+        Product::create($data);
         return to_route('products.index')-> with ('status', 'producto registrado');
     }
 
@@ -41,27 +50,36 @@ class ProductController extends Controller
     {
         //
      //   echo "Show productos";
-        return view('Admin/products/show', compact('product'));
+        return view('products.show', compact('product'));
     }
 
    
     public function edit(Product $product)
     {
         $brands =Brand::pluck('id','brand');
-        echo view('Admin/products/edit', compact('brands','product'));
+        echo view('products.edit', compact('brands','product'));
        
     }
 
    
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
-        return to_route('products.index')-> with ('status', 'producto Actualizado');
-    }
+        $data = $request->all();
 
+        if(isset($data["imagen"])){
+        // cambiar el nombre del archivo a cargar
+            $data["imagen"] = $filename = time(). ".".$data["imagen"]->extension();
+         // cambiar la carpeta publica 
+         $request->imagen->move(public_path("imagen/products"), $filename);
+        }
+        $product->update($data);
+        return to_route('products.index')-> with ('status', 'producto Actualizado'); 
+
+    }
+  
    public function delete(Product $product)
    {
-    echo view('Admin/products/delete', compact('product'));
+    echo view('products.delete', compact('product'));
    }
 
     public function destroy(Product $product)
