@@ -1,41 +1,27 @@
-<style>
-    header{
-        background:rgb(181, 155, 231);
-        padding-block:4px;
-        margin-block:-8px;
-        margin-inline:-8px;
-    }
-    
-   
-    nav p a{
-        color:rgb(41, 17, 46);
-        text-decoration:none;
-        padding-block:10px;
-        padding-inline: 10px;
-        margin-inline: -4px;
-    }
-
-    nav p{
-        font-family:Arial, Helvetica, sans-serif;
-        font-size: :25px;
-        padding-inline:20px;
-    }
-
-    nav p a:hover{
-        background:rgb(180, 100, 255):
-        padding-block:20px;
-        padding-inline:10px;
-    }
-</style>
-
-<header>
-    <nav>
-        <p> 
-        <a href="{{route('index')}}">Inicio</a>
-        <a href="{{route('products.index')}}">Productos</a>
-        <a href="{{route('clients.index')}}">Clientes</a>
-        <a href="{{route('Sales.index')}}">Ventas</a>
-        </p>
-    </nav>
-</header>
-<br>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">VISUALIN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('index')}}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('products.index')}}">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('clients.index')}}">Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('Sales.index')}}">ventas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
